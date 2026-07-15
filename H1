@@ -1,0 +1,14 @@
+Incidents
+- Root-caused and fixed an SMTP issue that was silently breaking email alerts — could've meant missed critical alerts if it had gone unnoticed longer.
+- SolarWinds web console went down due to a missing/corrupted config file in Orion — traced it and got it restored.
+- Resolved recurring server flapping that was generating unnecessary alert noise.
+- Fixed NetPath — the Network team's core service for monitoring traffic flow. This was down and blocking their visibility entirely.
+
+Upgrades
+- Ran two SolarWinds upgrades this H1. First one hit a snag — memory issues on the primary server plus monitoring gaps from version instability. I caught it, diagnosed it, and got us onto a stable version within a week instead of letting it drag.
+
+Availability
+- Was online over a weekend when SolarWinds went down, to get monitoring back up without waiting till Monday.
+
+Day-to-day
+- Supporting all BAU work across SolarWinds, Zenoss, and Dynatrace — running SolarWinds L1 through L3 solo for 8 months, and mainly driving L1/L2 tasks and investigations on both Zenoss and Dynatrace. Alerts, escalations, troubleshooting, all of it.
