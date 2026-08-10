@@ -1,5 +1,9 @@
-timeseries availability = avg(dt.synthetic.http.availability),
-  by: { dt.entity.http_check, step.name, dt.entity.http_check_step }
-| filter matchesValue(entityName(dt.entity.http_check), "Middleware - Sterling File Gateway")
-| summarize availability = avg(arrayAvg(availability)), by: { step.name }
-| sort availability asc
+
+fetch dt.synthetic.events
+| filter dt.synthetic.monitor.id == "Middleware - Sterling File Gateway"
+| filter event.type == "http_step_execution"
+| fields step.name, result.state
+| filter result.state == "SUCCESS"
+| summarize success = count(), by: { step.name }
+| fields step.name, success_rate = success
+| sort success_rate desc
