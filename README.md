@@ -1,9 +1,1 @@
-
-fetch dt.synthetic.events
-| filter dt.synthetic.monitor.id == "Middleware - Sterling File Gateway"
-| filter event.type == "http_step_execution"
-| fields step.name, result.state
-| filter result.state == "SUCCESS"
-| summarize success = count(), by: { step.name }
-| fields step.name, success_rate = success
-| sort success_rate desc
+ATATT3xFfGF0Dtzb6oDHO5XSw5Qj9O9E_CMqpQ5ieWCD99nHBp0JWqQpxw9DxfykIted4SQ7t1VQGhrLc3uz2bPKPsA51ASi0SxlaHi6_SwNbz_iB6xWTZtKNFR2hfJWbl0M9QcymftiP4QsjNsj1c58gu0430eu6T5iHuEAvcwDxK2sKr71NTM=40107D3C
